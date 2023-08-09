@@ -1,0 +1,47 @@
+package com.advanced.stringtokenizer;
+
+import java.util.StringTokenizer;
+
+public class StringTokenizerApp {
+
+    public static void main(String[] args) {
+
+        String starWarsQuote = "May,the,force,be,with,you!";
+
+        System.out.println("We are using StringTokenizer here: ");
+        StringTokenizer stringTokenizer = new StringTokenizer(starWarsQuote, ",");
+        System.out.println("Number of tokens: " + stringTokenizer.countTokens());
+        while (stringTokenizer.hasMoreTokens()) {
+            System.out.println(stringTokenizer.nextToken());
+        }
+
+        System.out.println("We are using String's split function here: ");
+        String[] starWarsQuoteWords = starWarsQuote.split(",", 3);
+        System.out.println("Number of elements: " + starWarsQuoteWords.length);
+        for (String starWarsQuoteWord : starWarsQuoteWords ) {
+            System.out.println(starWarsQuoteWord);
+        }
+    }
+
+}
+
+//
+Your provided code demonstrates the use of StringTokenizer and the split function to tokenize and split a given string. The input string is split into tokens using both approaches and the results are compared.
+
+Here's what the program does:
+
+It initializes a string starWarsQuote with the value "May,the,force,be,with,you!".
+
+It demonstrates the use of StringTokenizer:
+
+It creates a StringTokenizer object by passing the starWarsQuote string and the delimiter ,.
+It prints the number of tokens using stringTokenizer.countTokens().
+It uses a while loop with stringTokenizer.hasMoreTokens() to iterate through the tokens and print them.
+It demonstrates the use of split function:
+
+It splits the starWarsQuote string using "," as the delimiter, limiting the split to a maximum of 3 substrings.
+It prints the number of elements in the resulting array using starWarsQuoteWords.length.
+It uses a for-each loop to iterate through the array and print the substrings.
+The output will show how the StringTokenizer and split function work in splitting a string into tokens or substrings based on the specified delimiter.
+
+Keep in mind that StringTokenizer is an older approach, and using split is generally preferred in modern Java programming for its simplicity and readability.
